@@ -30,12 +30,12 @@ function contestNotifier(){
         sendDailyNotification("LeetCode Weekly Contest" , "Starts at 08:00 AM" );
         sendDailyNotification("Geeks For Geeks Contest" , "Starts at 07:00 PM"  ) ;
     }
-   if( day == 'Monday'){
+    else if( day == 'Monday'){
         sendDailyNotification("LeetCode Weekly Contest" , "Starts at 08:00 AM" );
         sendDailyNotification("Geeks For Geeks Contest" , "Starts at 07:00 PM"  ) ;
     }
     else if( day == 'Saturday' ){
-        if(isDateInList(biweeklySaturdays, currentDate))
+        if(isDateInList(biweeklySaturdays, new Date()))
         sendDailyNotification("LeetCode Bi-Weekly Contest" , "Starts at 08:00 PM" );
     }
     else if( day == 'Wednesday' ){
@@ -45,14 +45,12 @@ function contestNotifier(){
         sendDailyNotification("CodeStudio Contest" , "Starts at 8:00PM"  ) ;
     }
     fetchdata() ;
-    setTimeout ( scheduleDailyNotification , 1000) ;
 }
 
 function scheduleDailyNotification() {
     const now = new Date();
     const scheduledTime = new Date(now);
-    scheduledTime.setHours(4,59, 0, 0);  
-
+    scheduledTime.setHours(5,17, 0, 0);  
     if (scheduledTime.getTime() < now.getTime()) {
         scheduledTime.setDate(scheduledTime.getDate() + 1);
     }
@@ -68,6 +66,7 @@ function scheduleDailyNotification() {
             console.log('Offline at scheduled time, waiting to come online.');
             self.addEventListener('online', handleOnlineStatus);
         }
+        scheduleDailyNotification() ;
     }, timeUntilNotification);
 }
 
