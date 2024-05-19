@@ -51,7 +51,7 @@ function contestNotifier(){
 function scheduleDailyNotification() {
     const now = new Date();
     const scheduledTime = new Date(now);
-    scheduledTime.setHours(1,10, 0, 0);  
+    scheduledTime.setHours(4,59, 0, 0);  
 
     if (scheduledTime.getTime() < now.getTime()) {
         scheduledTime.setDate(scheduledTime.getDate() + 1);
