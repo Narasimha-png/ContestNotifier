@@ -1,6 +1,5 @@
 window.addEventListener('load' , ()=>{
       if( Notification.permission == 'denied'){
-        window.open('chrome://settings/content/notifications');
         alert('Notification permission is denied. Click on \"i\" side to home symbol at top and reset permissions.');
       }
     if( Notification.permission == 'granted'){
