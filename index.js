@@ -1,7 +1,7 @@
 window.addEventListener('load' , ()=>{
-      if( Notification.permission == 'denied'){
-        alert('Notification permission is denied. Click on \"i\" side to home symbol at top and reset permissions.');
-      }
+      if (Notification.permission === 'denied') {
+    alert('Notification permission is denied. Click on "i" side to home symbol at top and reset permissions.');
+}
     if( Notification.permission == 'granted'){
         document.getElementById("notgranted").style.display = "none" ;
         document.getElementById("granted").style.display = "flex" ;
