@@ -30,6 +30,10 @@ function contestNotifier(){
         sendDailyNotification("LeetCode Weekly Contest" , "Starts at 08:00 AM" );
         sendDailyNotification("Geeks For Geeks Contest" , "Starts at 07:00 PM"  ) ;
     }
+   if( day == 'Monday'){
+        sendDailyNotification("LeetCode Weekly Contest" , "Starts at 08:00 AM" );
+        sendDailyNotification("Geeks For Geeks Contest" , "Starts at 07:00 PM"  ) ;
+    }
     else if( day == 'Saturday' ){
         if(isDateInList(biweeklySaturdays, currentDate))
         sendDailyNotification("LeetCode Bi-Weekly Contest" , "Starts at 08:00 PM" );
@@ -47,7 +51,7 @@ function contestNotifier(){
 function scheduleDailyNotification() {
     const now = new Date();
     const scheduledTime = new Date(now);
-    scheduledTime.setHours(15,17, 0, 0);  
+    scheduledTime.setHours(1,10, 0, 0);  
 
     if (scheduledTime.getTime() < now.getTime()) {
         scheduledTime.setDate(scheduledTime.getDate() + 1);
